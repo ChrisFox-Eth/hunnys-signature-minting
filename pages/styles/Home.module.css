@@ -136,7 +136,7 @@
   transition-duration: 200ms;
   height: 3rem;
   min-width: 3rem;
-  font-size: 1.5rem;
+  font-size: .5rem;
   background: #e5e5ea;
   background-image: linear-gradient(to left, #cc25b3 0%, #418dff 101.52%);
   color: #fff;

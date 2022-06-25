@@ -26,7 +26,7 @@ const Home: NextPage = () => {
   // Fetch the NFT collection from thirdweb via it's contract address.
   const nftCollection = useNFTCollection(
     // Replace this with your NFT Collection contract address
-    process.env.NEXT_PUBLIC_NFT_COLLECTION_ADDRESS
+    "0x43C8Be32774aEBd79294FF0a37f3d3c6B8225BEC"
   );
 
   // Here we store the user inputs for their NFT.
