@@ -12,11 +12,11 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ThirdwebProvider desiredChainId={activeChainId}>
       <Head>
-        <title>thirdweb Signature Based Minting</title>
+        <title>Hunnys Community Collection</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta
           name="description"
-          content="thirdweb Example Repository to Showcase signature based minting on an NFT Collection contract"
+          content="Hunnys Community NFT Collection"
         />
         <meta name="keywords" content="thirdweb signature based minting" />
       </Head>

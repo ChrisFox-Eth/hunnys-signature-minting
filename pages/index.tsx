@@ -31,6 +31,7 @@ const Home: NextPage = () => {
 
   // Here we store the user inputs for their NFT.
   const [nftName, setNftName] = useState<string>("");
+  const [nftDescription, setNftDescription] = useState<string>("");
   const [file, setFile] = useState<File>();
 
   const { data: nfts, isLoading: loadingNfts } = useNFTs(nftCollection);
@@ -87,6 +88,7 @@ const Home: NextPage = () => {
         body: JSON.stringify({
           authorAddress: address, // Address of the current user
           nftName: nftName,
+          nftDescription: nftDescription,
           imagePath: url,
         }),
       });
@@ -198,6 +200,14 @@ const Home: NextPage = () => {
             onChange={(e) => setNftName(e.target.value)}
           />
 
+          <input
+            type="text"
+            placeholder="Description of your NFT"
+            className={styles.textInput}
+            maxLength={52}
+            onChange={(e) => setNftDescription(e.target.value)}
+          />
+
           {file ? (
             <img
               src={URL.createObjectURL(file)}
@@ -264,14 +274,20 @@ const Home: NextPage = () => {
                     />
                   </div>
                   <div style={{ textAlign: "center" }}>
-                    <p>Named</p>
+                    <p>Name:</p>
                     <p>
                       <b>{nft.metadata.name}</b>
                     </p>
                   </div>
+                  <div style={{ textAlign: "center" }}>
+                    <p>Description:</p>
+                    <p>
+                      <b>{nft.metadata.description}</b>
+                    </p>
+                  </div>
 
                   <div style={{ textAlign: "center" }}>
-                    <p>Owned by</p>
+                    <p>Owned by:</p>
                     <p>
                       <b>
                         {nft.owner

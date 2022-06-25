@@ -9,7 +9,7 @@ export default async function server(
 ) {
   try {
     // De-structure the arguments we passed in out of the request body
-    const { authorAddress, nftName, imagePath } = JSON.parse(req.body);
+    const { authorAddress, nftName, nftDescription, imagePath } = JSON.parse(req.body);
 
     // You'll need to add your private key in a .env.local file in the root of your project
     // !!!!! NOTE !!!!! NEVER LEAK YOUR PRIVATE KEY to anyone!
@@ -27,7 +27,7 @@ export default async function server(
     // Load the NFT Collection via it's contract address using the SDK
     const nftCollection = sdk.getNFTCollection(
       // Replace this with your NFT Collection contract address
-      process.env.NEXT_PUBLIC_NFT_COLLECTION_ADDRESS as string
+      "0x43C8Be32774aEBd79294FF0a37f3d3c6B8225BEC"
     );
 
     // Here we can make all kinds of cool checks to see if the user is eligible to mint the NFT.
@@ -55,9 +55,10 @@ export default async function server(
       metadata: {
         name: nftName as string,
         image: imagePath as string,
-        description: "An awesome animal NFT",
+        description: nftDescription as string,
         properties: {
-          // Add any properties you want to store on the NFT
+          "trait_type": "Collection",
+          "value": "Community Submission"
         },
       },
     });
