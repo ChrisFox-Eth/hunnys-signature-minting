@@ -26,7 +26,7 @@ const Home: NextPage = () => {
   // Fetch the NFT collection from thirdweb via it's contract address.
   const nftCollection = useNFTCollection(
     // Replace this with your NFT Collection contract address
-    "0x43C8Be32774aEBd79294FF0a37f3d3c6B8225BEC"
+    "0xf69Ba6Bce4B0ee10bfE9FD5D43A36bC9A1Cc5EbF"
   );
 
   // Here we store the user inputs for their NFT.
@@ -80,7 +80,7 @@ const Home: NextPage = () => {
       // Upload image to IPFS using the sdk.storage
       const tw = new ThirdwebSDK(signer);
       const ipfsHash = await tw.storage.upload(file);
-      const url = `${ipfsHash.uris[0]}.${file.type.split("/")[1]}`;
+      const url = `${ipfsHash.uris[0]}`;
 
       // Make a request to /api/server
       const signedPayloadReq = await fetch(`/api/server`, {
