@@ -134,7 +134,7 @@ const Home: NextPage = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <img src={`/logo.png`} alt="Thirdweb Logo" width={135} />
+              <img src={`/HunnysLogo.jpeg`} alt="Thirdweb Logo" width={300} />
             </a>
           </div>
         </div>
@@ -166,7 +166,7 @@ const Home: NextPage = () => {
       {/* Content */}
       <div className={styles.container}>
         {/* Top Section */}
-        <h1 className={styles.h1}>Signature-Based Minting</h1>
+        <h1 className={styles.h1}>The all new Hunnys Community Collection!</h1>
         <p className={styles.explain}>
           Signature-based minting with{" "}
           <b>
@@ -180,12 +180,7 @@ const Home: NextPage = () => {
               thirdweb
             </a>
           </b>{" "}
-          + Next.JS to create a community-made NFT collection with restrictions.
-        </p>
-
-        <p>
-          Hint: We only give out signatures if your NFT name is a cool{" "}
-          <b>animal name</b>! 😉
+          + Next.JS to create a community-made NFT collection.
         </p>
 
         <hr className={styles.divider} />

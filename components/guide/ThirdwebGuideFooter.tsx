@@ -10,15 +10,13 @@ export default function ThirdwebGuideFooter() {
           right: -80,
           height: 300,
           width: 150,
-          border: "1px solid #eaeaea",
           transform: "rotate(45deg)",
-          backgroundColor: " #262935",
           cursor: "pointer",
         }}
         role="button"
         onClick={() =>
           window.open(
-            "https://github.com/thirdweb-example/signature-based-minting",
+            "https://hunnys.net",
             "_blank"
           )
         }
@@ -32,14 +30,14 @@ export default function ThirdwebGuideFooter() {
         }}
       >
         <img
-          src={"/github.png"}
+          src={"https://www.hunnys.net/favicon.ico"}
           width={40}
           height={40}
           role="button"
           style={{ cursor: "pointer" }}
           onClick={() =>
             window.open(
-              "https://github.com/thirdweb-example/signature-based-minting",
+              "https://hunnys.net",
               "_blank"
             )
           }
