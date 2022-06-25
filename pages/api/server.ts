@@ -35,17 +35,17 @@ export default async function server(
 
     // 1) Check that it's an animal name from our list of animal names
     // This demonstrates how we can restrict what kinds of NFTs we give signatures for
-    if (!animalNames.includes(nftName?.toLowerCase())) {
-      res.status(400).json({ error: "That's not one of the animals we know!" });
-      return;
-    }
+//    if (!animalNames.includes(nftName?.toLowerCase())) {
+//      res.status(400).json({ error: "That's not one of the animals we know!" });
+//      return;
+//    }
 
     // 2) Check that this wallet hasn't already minted a page - 1 NFT per wallet
-    const hasMinted = (await nftCollection.balanceOf(authorAddress)).gt(0);
-    if (hasMinted) {
-      res.status(400).json({ error: "Already minted" });
-      return;
-    }
+//    const hasMinted = (await nftCollection.balanceOf(authorAddress)).gt(0);
+//    if (hasMinted) {
+//      res.status(400).json({ error: "Already minted" });
+//      return;
+//    }
 
     // If all the checks pass, begin generating the signature...
 
