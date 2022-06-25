@@ -132,11 +132,11 @@ const Home: NextPage = () => {
         <div className={styles.left}>
           <div>
             <a
-              href="https://thirdweb.com/"
+              href="https://hunnys.net/"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <img src={`/HunnysLogo.jpeg`} alt="Thirdweb Logo" width={300} />
+              <img src={`/HunnysLogo.jpeg`} alt="Hunnys Logo" width={300} />
             </a>
           </div>
         </div>
@@ -188,7 +188,7 @@ const Home: NextPage = () => {
         <hr className={styles.divider} />
 
         <div className={styles.collectionContainer}>
-          <h2 className={styles.ourCollection}>
+          <h2 className={styles.theCollection}>
             Mint your own NFT into the collection:
           </h2>
 
@@ -204,7 +204,7 @@ const Home: NextPage = () => {
             type="text"
             placeholder="Description of your NFT"
             className={styles.textInput}
-            maxLength={52}
+            maxLength={250}
             onChange={(e) => setNftDescription(e.target.value)}
           />
 
@@ -251,9 +251,9 @@ const Home: NextPage = () => {
         <hr className={styles.smallDivider} />
 
         <div className={styles.collectionContainer}>
-          <h2 className={styles.ourCollection}>
-            Other NFTs in this collection:
-          </h2>
+          <h1 className={styles.ourCollection}>
+            See the collection:
+          </h1>
 
           {loadingNfts ? (
             <p>Loading...</p>
@@ -264,37 +264,49 @@ const Home: NextPage = () => {
                   className={styles.nftItem}
                   key={nft.metadata.id.toString()}
                 >
-                  <div>
-                    <ThirdwebNftMedia
+                  <div style={{
+                    width: 200,
+                    cursor: "pointer",
+                    borderRadius: 16,
+                  }}
+                  onClick={() =>
+                   window.open(
+                     "https://testnets.opensea.io/assets/mumbai/0xf69ba6bce4b0ee10bfe9fd5d43a36bc9a1cc5ebf/" + nft.metadata.id,
+                     "_blank"
+                   )
+                 }
+                    >
+                    <ThirdwebNftMedia style={{
+                      width:200,
+                    }}
                       metadata={nft.metadata}
-                      style={{
-                        height: 90,
-                        borderRadius: 16,
-                      }}
                     />
+                    <div>{nft.metadata.name}</div>
                   </div>
-                  <div style={{ textAlign: "center" }}>
-                    <p>Name:</p>
+                  <div className={'nftDescription'} style={{ textAlign: "center", width: "30%", margin:"50px" }}>
                     <p>
-                      <b>{nft.metadata.name}</b>
-                    </p>
-                  </div>
-                  <div style={{ textAlign: "center" }}>
-                    <p>Description:</p>
-                    <p>
-                      <b>{nft.metadata.description}</b>
+                      <b>{" "}{nft.metadata.description}{" "}</b>
                     </p>
                   </div>
 
-                  <div style={{ textAlign: "center" }}>
+                  <div
+                    style={{
+                      textAlign: "center"
+                    }}>
                     <p>Owned by:</p>
-                    <p>
-                      <b>
+                    <p style={{
+                      cursor: "pointer",
+                    }}
+                      onClick={() =>
+                        window.open(
+                          "https://testnets.opensea.io/" + nft.owner,
+                          "_blank"
+                        )
+                      }>
                         {nft.owner
                           .slice(0, 6)
                           .concat("...")
                           .concat(nft.owner.slice(-4))}
-                      </b>
                     </p>
                   </div>
                 </div>
