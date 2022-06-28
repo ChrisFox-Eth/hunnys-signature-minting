@@ -43,6 +43,32 @@
   padding: 0 24px;
 }
 
+.aboutContainer {
+  display: flex;
+  margin: auto;
+  word-wrap: break-word;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 0 24px;
+  font-size: 1.125rem;
+}
+
+.faqContainer {
+  display: flex;
+  margin: auto;
+  word-wrap: break-word;
+  flex-direction: column;
+  align-items: center;
+  text-align: left;
+  justify-content: center;
+  width: 50%;
+  align-items: baseline;
+  padding: 0 24px;
+  font-size: 1.125rem;
+}
+
 .page {
   width: inherit;
   border-radius: 20px;
@@ -79,7 +105,7 @@
 }
 
 .header {
-  background-color: #5B17EA;
+  background-color: var(--purple);
   position: fixed;
   top: 0;
   left: 0;
@@ -96,6 +122,44 @@
   height: 100%;
   display: flex;
   align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-left: 5%;
+}
+
+.nav {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-left: 5%;
+}
+
+.listItems {
+  list-style-type: none;
+  text-align:left;
+}
+
+.logo {
+  width: 100%;
+  max-width: 300px;
+}
+
+.hupeScout {
+  width: 100%;
+  max-width: 500px;
+}
+
+.exampleImages {
+  width: auto;
+  max-width: 300px;
+}
+
+.navLink {
+  text-decoration: none;
+  color: white;
+  align-items: right;
   justify-content: center;
   flex-direction: column;
   margin-left: 5%;
@@ -187,6 +251,25 @@
   margin-top: 12px;
 }
 
+.textGrid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.textItem {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 70%;
+  border-radius: 16px;
+  padding: 32px;
+  margin: 32px;
+}
+
 .h1 {
   margin-bottom: 0px;
 }
@@ -241,6 +324,15 @@
   cursor: pointer;
 }
 
+@media only screen and (max-width: 900px) {
+  .exampleImages {
+    display:none;
+  }
+  .faqContainer {
+    width: auto;
+  }
+}
+
 @media only screen and (max-width: 600px) {
   .collectionContainer {
     width: 400px;
@@ -249,5 +341,15 @@
     flex-direction: column;
     align-items: center;
     margin-top: 2%;
+  }
+  .right {
+    display: none;
+  }
+  .exampleImages {
+    width: auto;
+    max-width: 150px;
+  }
+  .textItem {
+    width: 100%;
   }
 }

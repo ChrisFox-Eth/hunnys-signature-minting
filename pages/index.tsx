@@ -131,13 +131,7 @@ const Home: NextPage = () => {
       <div className={styles.header}>
         <div className={styles.left}>
           <div>
-            <a
-              href="https://hunnys.net/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <img src={`/HunnysLogo.jpeg`} alt="Hunnys Logo" width={300} />
-            </a>
+              <img src={`/HunnysLogoTransparent.png`} alt="Hunnys Logo" className={styles.logo} />
           </div>
         </div>
         <div className={styles.right}>
@@ -168,88 +162,103 @@ const Home: NextPage = () => {
       {/* Content */}
       <div className={styles.container}>
         {/* Top Section */}
-        <h1 className={styles.h1}>The all new Hunnys Community Collection!</h1>
-        <p className={styles.explain}>
-          Signature-based minting with{" "}
-          <b>
-            {" "}
-            <a
-              href="https://thirdweb.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={styles.purple}
-            >
-              thirdweb
-            </a>
-          </b>{" "}
-          + Next.JS to create a community-made NFT collection.
-        </p>
+        <h1 className={styles.h1}>Introducing... HUPE Scouts!</h1>
+        <div>
+            <img src={`/HupeScoutsHunny.jpeg`} alt="Hupe Scouts Hunny" className={styles.hupeScout} />
+        </div>
+        <h2>The Official Community-Owned Derivative Brand</h2>
 
         <hr className={styles.divider} />
 
-        <div className={styles.collectionContainer}>
-          <h2 className={styles.theCollection}>
-            Mint your own NFT into the collection:
-          </h2>
 
-          <input
-            type="text"
-            placeholder="Name of your NFT"
-            className={styles.textInput}
-            maxLength={26}
-            onChange={(e) => setNftName(e.target.value)}
-          />
+        <div className={styles.aboutContainer}>
+          {/* About Section */}
+          <h1 className={styles.h1}>About</h1>
+          <div className={styles.textGrid}>
+              <div className={styles.textItem}>
+                <p style={{ padding:"20px", textAlign:"left" }}>Hunny holders can Create, Earn and Grow this official community-owned brand using innovative decentralized technology.<br></br><br></br>
+                Decentralized community participation is a core value of WEB3 and we want to use that within Hunnys to reward and engage the loyal members who have found a home with us. Over the past months we have seen how dedicated and enthusiastic our community is, which is why we believe you have the right to help shape how it grows in a big way.<br></br><br></br>
+                The Hunnys Hupe Scouts brand belongs to you. By working together, the community can grow the Hupe Scouts Brand alongside Hunnys10k and earn profits from their participation while feeling like they are making a meaningful impact on the project’s growth.</p>
+                    <img src={`/SkuzzRelic.png`} alt="SkuzzRelic" className={styles.exampleImages} />
+          </div>
+          <hr className={styles.smallDivider} />
+          <div className={styles.aboutContainer}>
+          <h1>How To Participate:</h1>
+          <ul className={styles.listItems}>
+          <li>1. Mint your 3000 x 3000 px Hunnys Derivative below using this base (you may redraw or change as you see fit, this is just a guideline)</li>
+          <li>2. Receive an exclusive Hunnys Hupe Scouts Seasons NFT</li>
+          <li>3. Verify your wallet on Collab-Land in Discord to receive the Hupe role</li>
+          <li>4. Gain Access to the private Hupe Scouts channel to plan your strategy, events and more with fellow Huper-s</li>
+          <li>5. List your Hunny for sale at the price of your choice</li>
+          <li>6. Collect 100% of sales and royalties on your creation</li>
+          </ul>
+</div>
+</div>
 
-          <input
-            type="text"
-            placeholder="Description of your NFT"
-            className={styles.textInput}
-            maxLength={250}
-            onChange={(e) => setNftDescription(e.target.value)}
-          />
+          <hr className={styles.smallDivider} />
+          <div className={styles.collectionContainer}>
+            <h2 className={styles.theCollection}>
+              Join the Hupe Scouts:
+            </h2>
 
-          {file ? (
-            <img
-              src={URL.createObjectURL(file)}
-              style={{ cursor: "pointer", maxHeight: 250, borderRadius: 8 }}
-              onClick={() => setFile(undefined)}
+            <input
+              type="text"
+              placeholder="Name of your NFT"
+              className={styles.textInput}
+              maxLength={26}
+              onChange={(e) => setNftName(e.target.value)}
             />
-          ) : (
-            <div
-              className={styles.imageInput}
-              onClick={uploadFile}
-              onDragOver={(e) => e.preventDefault()}
-              onDrop={(e) => {
-                e.preventDefault();
-                setFile(e.dataTransfer.files[0]);
-              }}
-            >
-              Drag and drop an image here to upload it!
-            </div>
-          )}
-        </div>
-        <input
-          type="file"
-          accept="image/png, image/gif, image/jpeg"
-          id="profile-picture-input"
-          ref={fileInputRef}
-          style={{ display: "none" }}
-        />
 
-        <div style={{ marginTop: 24 }}>
-          {address ? (
-            <a className={styles.mainButton} onClick={mintWithSignature}>
-              Mint NFT
-            </a>
-          ) : (
-            <a className={styles.mainButton} onClick={connectWithMetamask}>
-              Connect Wallet
-            </a>
-          )}
-        </div>
+            <input
+              type="text"
+              placeholder="Description of your NFT"
+              className={styles.textInput}
+              maxLength={250}
+              onChange={(e) => setNftDescription(e.target.value)}
+            />
 
-        <hr className={styles.smallDivider} />
+            {file ? (
+              <img
+                src={URL.createObjectURL(file)}
+                style={{ cursor: "pointer", maxHeight: 250, borderRadius: 8 }}
+                onClick={() => setFile(undefined)}
+              />
+            ) : (
+              <div
+                className={styles.imageInput}
+                onClick={uploadFile}
+                onDragOver={(e) => e.preventDefault()}
+                onDrop={(e) => {
+                  e.preventDefault();
+                  setFile(e.dataTransfer.files[0]);
+                }}
+              >
+                Drag and drop an image here to upload it!
+              </div>
+            )}
+          </div>
+          <input
+            type="file"
+            accept="image/png, image/gif, image/jpeg"
+            id="profile-picture-input"
+            ref={fileInputRef}
+            style={{ display: "none" }}
+          />
 
+          <div style={{ marginTop: 24 }}>
+            {address ? (
+              <a className={styles.mainButton} onClick={mintWithSignature}>
+                Mint NFT
+              </a>
+            ) : (
+              <a className={styles.mainButton} onClick={connectWithMetamask}>
+                Connect Wallet
+              </a>
+            )}
+          </div>
+
+          <hr className={styles.smallDivider} />
+          </div>
         <div className={styles.collectionContainer}>
           <h1 className={styles.ourCollection}>
             See the collection:
@@ -313,6 +322,26 @@ const Home: NextPage = () => {
               ))}
             </div>
           )}
+        </div>
+        <hr className={styles.smallDivider} />
+        <div>
+          <h1 className={styles.h1}>
+            FAQ
+          </h1>
+          <div className={styles.faqContainer}>
+          <h3>If I previously drew a Hunnys derivative can I mint it inside the collection?</h3>
+          <em>Yes you can! We do however suggest using something that has not been minted before.</em>
+          <h3>Can I mint a derivative that I didn’t draw myself?</h3>
+          <em>Yes - As long as you have commercial rights/permission to use the image for this purpose. We want non-artists to be able to participate as well, so we encourage talking to community artists about your vision for your Hunnys derivative and hiring them to create it for this project.</em>
+          <h3>Are there any limits to what I can upload?</h3>
+          <em>TBD</em>
+          <h3>How can we earn money with the Hunnys Hupe Scouts?</h3>
+          <em>Initially you can earn both primary sale and royalties by listing your piece for sale within the collection. If the Hunnys Hupe Scouts derivative brand gets deals, sponsorships or other partnerships in the future, the earnings will be split equally amongst all the contributors.</em>
+          <h3>Can I upload more than 1 piece?</h3>
+          <em>Yes!</em>
+          <h3>How was this project created?</h3>
+          <em>The Hunnys Hupe Scouts brand utilizes state-of-the-art decentralized blockchain technology developed by thirdweb to implement governance, token management, and revenue splitting.</em>
+</div>
         </div>
       </div>
     </>
