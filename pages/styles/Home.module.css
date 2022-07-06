@@ -39,7 +39,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 100vw;
+  width: 100%;
   padding: 0 24px;
 }
 
@@ -56,15 +56,12 @@
 }
 
 .faqContainer {
-  display: flex;
-  margin: auto;
   word-wrap: break-word;
-  flex-direction: column;
-  align-items: center;
   text-align: left;
   justify-content: center;
-  width: 50%;
-  align-items: baseline;
+  width: 100%;
+  align-items: center;
+  display: block;
   padding: 0 24px;
   font-size: 1.125rem;
 }
@@ -105,7 +102,7 @@
 }
 
 .header {
-  background-color: var(--purple);
+  background-color: var(--hero-darkblue);
   position: fixed;
   top: 0;
   left: 0;
@@ -143,17 +140,18 @@
 
 .logo {
   width: 100%;
-  max-width: 300px;
+  max-width: 500px;
 }
 
 .hupeScout {
   width: 100%;
-  max-width: 500px;
+  max-width: 600px;
 }
 
 .exampleImages {
   width: auto;
-  max-width: 300px;
+  padding: 20px;
+  max-width: 400px;
 }
 
 .navLink {
@@ -200,13 +198,13 @@
   transition-duration: 200ms;
   height: 3rem;
   min-width: 3rem;
-  font-size: 1.5rem;
-  background: #e5e5ea;
-  background-image: linear-gradient(to left, #cc25b3 0%, #418dff 101.52%);
-  color: #fff;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+  background: var(--yellow);
+  color: var(--black);
+  font-family: "Luckiest Guy";
   width: 180px;
   text-align: center;
-  border-radius: 9999px;
 }
 
 .mainButton:hover {
@@ -214,12 +212,10 @@
 }
 
 .ourCollection {
-  font-size: 3.5rem;
   margin-bottom: 16px;
 }
 
 .theCollection {
-  font-size: 1.5rem;
   margin-bottom: 16px;
 }
 
@@ -232,6 +228,12 @@
   margin-top: 2%;
 }
 
+.nftName {
+  font-family: "Luckiest Guy";
+  font-size: 1.125rem;
+  letter-spacing: 1px;
+}
+
 .nftGrid {
   display: flex;
   flex-direction: column;
@@ -241,13 +243,16 @@
 }
 
 .nftItem {
+  box-shadow: 0 0 10px rgb(0 0 0 / 50%);
+  background-color: #F7F8F9;
+  border-radius: 20px;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
   width: 100%;
   border-radius: 16px;
-  padding: 8px;
+  padding: 25px;
   margin-top: 12px;
 }
 
@@ -259,19 +264,30 @@
   width: 100%;
 }
 
+.mintShadow {
+  box-shadow: 0 0 50px rgb(0 0 0 / 50%);
+  background-color: var(--hero-lightblue);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  margin-top: 50px;
+  padding: 20px;
+}
+
 .textItem {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  width: 70%;
-  border-radius: 16px;
-  padding: 32px;
-  margin: 32px;
+  width: 80%;
 }
 
 .h1 {
   margin-bottom: 0px;
+  letter-spacing: 2px;
 }
 
 .explain {
@@ -289,23 +305,28 @@
 
 .divider {
   width: 50%;
-  border-color: grey;
-  opacity: 0.25;
+  border-color: transparent;
+  margin-top: 64px;
 }
 
 .smallDivider {
   width: 25%;
   border-color: grey;
-  margin-top: 64px;
   opacity: 0.25;
+}
+
+.walletNavText {
+  margin-left: 8px;
+  margin-right: 8px;
+  color: white;
 }
 
 .textInput {
   width: 75%;
-  background-color: transparent;
-  border: 1px solid grey;
+  background-color: white;
+  border: 2px solid black;
   border-radius: 8px;
-  color: #fff;
+  color: black;
   height: 48px;
   padding: 0 16px;
   font-size: 1rem;
@@ -315,12 +336,13 @@
 .imageInput {
   width: 100%;
   height: 100px;
-  border: 1px dashed grey;
+  background-color: transparent;
+  border: 1px dashed black;
   border-radius: 16px;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: grey;
+  color: black;
   cursor: pointer;
 }
 
@@ -329,6 +351,15 @@
     display:none;
   }
   .faqContainer {
+    width: auto;
+  }
+  .nftOwner {
+    display:none;
+  }
+  .nftDescription {
+    display: none;
+  }
+  .nftItem {
     width: auto;
   }
 }

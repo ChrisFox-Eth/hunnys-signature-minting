@@ -131,7 +131,7 @@ const Home: NextPage = () => {
       <div className={styles.header}>
         <div className={styles.left}>
           <div>
-              <img src={`/HunnysLogoTransparent.png`} alt="Hunnys Logo" className={styles.logo} />
+              <img src={`/HUPEHeartLogo.png`} alt="Hunnys Logo" className={styles.logo} />
           </div>
         </div>
         <div className={styles.right}>
@@ -143,8 +143,8 @@ const Home: NextPage = () => {
               >
                 Disconnect Wallet
               </a>
-              <p style={{ marginLeft: 8, marginRight: 8, color: "grey" }}>|</p>
-              <p>
+              <p className={styles.walletNavText}>|</p>
+              <p className={styles.walletNavText}>
                 {address.slice(0, 6).concat("...").concat(address.slice(-4))}
               </p>
             </>
@@ -162,50 +162,46 @@ const Home: NextPage = () => {
       {/* Content */}
       <div className={styles.container}>
         {/* Top Section */}
-        <h1 className={styles.h1}>Introducing... HUPE Scouts!</h1>
         <div>
-            <img src={`/HupeScoutsHunny.jpeg`} alt="Hupe Scouts Hunny" className={styles.hupeScout} />
+            <img src={`/HUPEScoutHero.png`} alt="Hupe Scouts Hunny" className={styles.hupeScout} />
         </div>
-        <h2>The Official Community-Owned Derivative Brand</h2>
-
-        <hr className={styles.divider} />
-
 
         <div className={styles.aboutContainer}>
           {/* About Section */}
-          <h1 className={styles.h1}>About</h1>
           <div className={styles.textGrid}>
+          <h1 className={styles.h1}>About</h1>
               <div className={styles.textItem}>
                 <p style={{ padding:"20px", textAlign:"left" }}>Hunny holders can Create, Earn and Grow this official community-owned brand using innovative decentralized technology.<br></br><br></br>
-                Decentralized community participation is a core value of WEB3 and we want to use that within Hunnys to reward and engage the loyal members who have found a home with us. Over the past months we have seen how dedicated and enthusiastic our community is, which is why we believe you have the right to help shape how it grows in a big way.<br></br><br></br>
-                The Hunnys Hupe Scouts brand belongs to you. By working together, the community can grow the Hupe Scouts Brand alongside Hunnys10k and earn profits from their participation while feeling like they are making a meaningful impact on the project’s growth.</p>
+                Decentralized community participation is a core value of Web3 and we want to use that within Hunnys to reward and engage the loyal members who have found a home with us. Over the past months we have seen how dedicated and enthusiastic our community is, which is why we believe you have the right to help shape how it grows in a big way.<br></br><br></br>
+                The Hunnys Hupe Scouts brand belongs to you. By working together, the community can grow the Hupe Scouts Brand alongside Hunnys10k and earn profits from their participation while making a meaningful impact on the project’s growth.</p>
                     <img src={`/SkuzzRelic.png`} alt="SkuzzRelic" className={styles.exampleImages} />
           </div>
-          <hr className={styles.smallDivider} />
+          </div>
+          </div>
+          <hr className={styles.divider} />
           <div className={styles.aboutContainer}>
-          <h1>How To Participate:</h1>
+          <h1 className={styles.h1}>How To Participate:</h1>
           <ul className={styles.listItems}>
           <li>1. Mint your 3000 x 3000 px Hunnys Derivative below using this base (you may redraw or change as you see fit, this is just a guideline)</li>
           <li>2. Receive an exclusive Hunnys Hupe Scouts Seasons NFT</li>
-          <li>3. Verify your wallet on Collab-Land in Discord to receive the Hupe role</li>
-          <li>4. Gain Access to the private Hupe Scouts channel to plan your strategy, events and more with fellow Huper-s</li>
+          <li>3. Verify your wallet on Collab-Land in Discord to receive the Hupe Scouts role</li>
+          <li>4. Gain access to the private Hupe Scouts channel to plan your strategy, events and more with fellow Huper-s</li>
           <li>5. List your Hunny for sale at the price of your choice</li>
           <li>6. Collect 100% of sales and royalties on your creation</li>
           </ul>
-</div>
-</div>
+          </div>
 
-          <hr className={styles.smallDivider} />
+          <div className={styles.mintShadow}>
+          <h2 className={styles.theCollection}>
+            Join the Hupe Scouts:
+          </h2>
           <div className={styles.collectionContainer}>
-            <h2 className={styles.theCollection}>
-              Join the Hupe Scouts:
-            </h2>
 
             <input
               type="text"
               placeholder="Name of your NFT"
               className={styles.textInput}
-              maxLength={26}
+              maxLength={40}
               onChange={(e) => setNftName(e.target.value)}
             />
 
@@ -236,7 +232,7 @@ const Home: NextPage = () => {
                 Drag and drop an image here to upload it!
               </div>
             )}
-          </div>
+
           <input
             type="file"
             accept="image/png, image/gif, image/jpeg"
@@ -256,9 +252,9 @@ const Home: NextPage = () => {
               </a>
             )}
           </div>
-
-          <hr className={styles.smallDivider} />
           </div>
+          </div>
+          <hr className={styles.divider} />
         <div className={styles.collectionContainer}>
           <h1 className={styles.ourCollection}>
             See the collection:
@@ -290,18 +286,18 @@ const Home: NextPage = () => {
                     }}
                       metadata={nft.metadata}
                     />
-                    <div>{nft.metadata.name}</div>
+                    <div className={styles.nftName}>{nft.metadata.name}</div>
                   </div>
-                  <div className={'nftDescription'} style={{ textAlign: "center", width: "30%", margin:"50px" }}>
+                  <div className={styles.nftDescription} style={{ textAlign: "center", width: "30%", margin:"50px" }}>
                     <p>
                       <b>{" "}{nft.metadata.description}{" "}</b>
                     </p>
                   </div>
 
                   <div
-                    style={{
-                      textAlign: "center"
-                    }}>
+                    className={
+                      styles.nftOwner
+                    }>
                     <p>Owned by:</p>
                     <p style={{
                       cursor: "pointer",
@@ -323,18 +319,18 @@ const Home: NextPage = () => {
             </div>
           )}
         </div>
-        <hr className={styles.smallDivider} />
+        <hr className={styles.divider} />
         <div>
           <h1 className={styles.h1}>
             FAQ
           </h1>
           <div className={styles.faqContainer}>
-          <h3>If I previously drew a Hunnys derivative can I mint it inside the collection?</h3>
-          <em>Yes you can! We do however suggest using something that has not been minted before.</em>
+          <h3>If I previously drew a Hunnys derivative, can I mint it inside the collection?</h3>
+          <em>Yes you can! We only ask that you use something that has not been minted before.</em>
           <h3>Can I mint a derivative that I didn’t draw myself?</h3>
           <em>Yes - As long as you have commercial rights/permission to use the image for this purpose. We want non-artists to be able to participate as well, so we encourage talking to community artists about your vision for your Hunnys derivative and hiring them to create it for this project.</em>
           <h3>Are there any limits to what I can upload?</h3>
-          <em>TBD</em>
+          <em>The Hunnys team values and welcomes a diverse field of creative input, artistic expression, and background. Having said that, if it is found out that any of the content minted on this contract promotes hatred, violence, bigotry, or demeaning towards other artists/collections, the Hunnys team reserves the right to hide these pieces from the website, restrict from future minting, and if necessary, take further disciplinary actions inside of the Hunnys Discord.</em>
           <h3>How can we earn money with the Hunnys Hupe Scouts?</h3>
           <em>Initially you can earn both primary sale and royalties by listing your piece for sale within the collection. If the Hunnys Hupe Scouts derivative brand gets deals, sponsorships or other partnerships in the future, the earnings will be split equally amongst all the contributors.</em>
           <h3>Can I upload more than 1 piece?</h3>

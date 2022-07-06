@@ -27,17 +27,30 @@ select {
 
 :root {
   --black: #1c1e21;
+  --light-blue: #3ECEFF;
   --purple: #5B17EA;
+  --yellow: #FADF70;
+  --orange: #ff7b3e;
+  --pink: #DC4B87;
+  --hero-lightblue: #CAF0FD;
+  --hero-mediumblue: #469CCF;
+  --hero-darkblue: #2C678A;
   --blue: #CAF0FD;
   --white: #ffffff;
   --tw-color1: #5B17EA;
   --tw-color1-hover: #9333ea;
 }
 
+:focus {
+  outline-style: none;
+  background-color: #f0f0f0 !important;
+  outline-color: black;
+}
+
 body {
-  background: var(--black);
+  background: var(--light-blue);
   font-family: "DM Sans", sans-serif;
-  color: var(--white);
+  color: var(--black);
   display: flex;
   margin: 0;
   text-align: center;
@@ -46,7 +59,16 @@ body {
 h1 {
   font-size: 3rem;
   font-family: "Luckiest Guy", sans-serif;
+  letter-spacing: 2px;
 }
 h2 {
   font-size: 2rem;
+  font-family: "Luckiest Guy", sans-serif;
+  letter-spacing: 1px;
+}
+
+h3 {
+  font-size: 1.5rem;
+  font-family: "Luckiest Guy", sans-serif;
+  letter-spacing: 1px;
 }
