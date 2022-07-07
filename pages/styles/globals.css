@@ -41,10 +41,19 @@ select {
   --tw-color1-hover: #9333ea;
 }
 
+a:focus {
+  background-color: transparent !important;
+}
+
 :focus {
   outline-style: none;
   background-color: #f0f0f0 !important;
   outline-color: black;
+}
+
+a {
+  text-decoration: none;
+  color:white;
 }
 
 body {
@@ -57,9 +66,10 @@ body {
 }
 
 h1 {
-  font-size: 3rem;
+  font-size: 4rem;
   font-family: "Luckiest Guy", sans-serif;
   letter-spacing: 2px;
+  color: var(--hero-darkblue);
 }
 h2 {
   font-size: 2rem;
