@@ -219,26 +219,33 @@ const Home: NextPage = () => {
         <div className={styles.aboutContainer}>
           {/* About Section */}
               <ul className={styles.listItemsBig}>
-              <li><img src={`/HunnysHeart.svg`} className={styles.heartBullet}/>  Sell commissions of your Hunnys-inspired artwork</li>
-              <li><img src={`/HunnysHeart.svg`} className={styles.heartBullet}/>  Use the Hupe Scouts brand and logo for anything </li>
-              <li><img src={`/HunnysHeart.svg`} className={styles.heartBullet}/>  Create Hunnys artwork and list it for sale</li>
-              <li><img src={`/HunnysHeart.svg`} className={styles.heartBullet}/>  Grow the Hunnys brand on your terms</li>
+              <li className={styles.h2}><img src={`/HunnysHeart.svg`} className={styles.heartBullet}/>  Sell commissions of Hunnys derivative artwork under 1 unified collection</li>
+              <li className={styles.h2}><img src={`/HunnysHeart.svg`} className={styles.heartBullet}/>  Use the Hupe Scouts brand and logo for anything (commercial or otherwise!)</li>
+              <li className={styles.h2}><img src={`/HunnysHeart.svg`} className={styles.heartBullet}/>  Create Hunnys artwork and list it for sale or gift it to friends</li>
+              <li className={styles.h2}><img src={`/HunnysHeart.svg`} className={styles.heartBullet}/>  Grow the Hunnys brand on your own terms</li>
+              <li className={styles.h2}><img src={`/HunnysHeart.svg`} className={styles.heartBullet}/>  Commission Hunnys artwork from other artists and (with consent) mint it for sale</li>
+              <li className={styles.h2}><img src={`/HunnysHeart.svg`} className={styles.heartBullet}/>  Hold events, games, contests and more as you see fit</li>
               </ul>
-              <img src={`/HunnysDerivs.png`} alt="Hunnys Derivatives" className={styles.hunnysDerivs} />
-              <p>Hunny holders can Create, Earn and Grow this official community-owned brand.</p>
-              <p>The Hunnys Hupe Scouts brand belongs to you.</p>
-              <p className={styles.textItem}>By working together, the community can grow the Hupe Scouts Brand alongside Hunnys10k and earn profits from their participation while making a meaningful impact on the project’s growth.</p>
+              <div className={styles.textGrid}>
+              <h1 className={styles.h1}>About</h1>
+                  <div className={styles.textItem}>
+                    <p style={{ padding:"20px", textAlign:"left" }}>Hunny holders can Create, Earn and Grow this official community-owned brand using innovative decentralized technology.<br></br><br></br>
+                    Decentralized community participation is a core value of Web3 and we want to use that within Hunnys to reward and engage the loyal members who have found a home with us. Over the past months we have seen how dedicated and enthusiastic our community is, which is why we believe you have the right to help shape how it grows in a big way.<br></br><br></br>
+                    The Hunnys Hupe Scouts brand belongs to you. By working together, the community can grow the Hupe Scouts Brand alongside Hunnys10k and earn profits from their participation while making a meaningful impact on the project’s growth.</p>
+                        <img src={`/SkuzzRelic.png`} alt="SkuzzRelic" className={styles.exampleImages} />
+              </div>
+              </div>
           </div>
           <hr className={styles.divider} />
           <div className={styles.aboutContainer}>
           <h1 className={styles.h1}>How To Participate:</h1>
           <ul className={styles.listItems}>
-          <li>1. Mint your 3000 x 3000 px Hunnys Derivative below using <a href='https://drive.google.com/drive/folders/1z9_njr3mXPU6FTMq_bCaREUFIb6NxhKL' rel="noreferrer" target='_blank'>this base</a> (you may redraw or change as you see fit, this is just a guideline)</li>
+          <li>1. Mint your Hunnys derivative below using <a href='https://drive.google.com/drive/folders/1z9_njr3mXPU6FTMq_bCaREUFIb6NxhKL' rel="noreferrer" target='_blank'>the bases we provide</a> or your own design!</li>
           <li>2. Receive an exclusive Hunnys Hupe Scouts Seasons NFT</li>
           <li>3. Verify your wallet on Collab-Land in Discord to receive the Hupe Scouts role</li>
           <li>4. Gain access to the private Hupe Scouts channel to plan your strategy, events and more with fellow Huper-s</li>
           <li>5. List your Hunny for sale at the price of your choice</li>
-          <li>6. Collect 100% of sales and royalties on your creation</li>
+          <li>6. Collect 100% of your primary sale and share all royalties earned with the collective Hupe Scouts on your creation</li>
           </ul>
           </div>
 
@@ -327,7 +334,7 @@ const Home: NextPage = () => {
                   }}
                   onClick={() =>
                    window.open(
-                     "https://testnets.opensea.io/assets/mumbai/0xf69ba6bce4b0ee10bfe9fd5d43a36bc9a1cc5ebf/" + nft.metadata.id,
+                     "https://opensea.io/assets/ethereum/0x1D595b1b360E2240e85f06beC1D1679D5C005BE3/" + nft.metadata.id,
                      "_blank"
                    )
                  }
@@ -355,7 +362,7 @@ const Home: NextPage = () => {
                     }}
                       onClick={() =>
                         window.open(
-                          "https://testnets.opensea.io/" + nft.owner,
+                          "https://opensea.io/" + nft.owner,
                           "_blank"
                         )
                       }>
@@ -377,30 +384,31 @@ const Home: NextPage = () => {
           </h1>
           <div className={styles.faqContainer}>
           <h3>How does this work?</h3>
-          <em>This is not an ordinary NFT collection. This is a community-based collection that allows multiple people to mint their own pieces on to it, rather than confining that ability to one single owner. The instant that you mint your NFT, you will become its owner. You can then use it for any purpose that you wish: as a verified PFP on Twitter, for merchandise, to gift to somebody special, or to sell it! You will see the piece inside of OpenSea like any other NFT, and you can take it from there. Also, once you mint at least one piece, your wallet address will be added to our Royalties contract, allowing you to share in receiving perpetual royalties on any secondary sales taking place in markets like OpenSea.</em>
-          <br></br><br></br><em>In the beginning, the minting process will require a manual verification process by Stacys and Rat from Hunnys. While this is occurring, the minting process will be password-protected. If you are interested, please reach out to Stacys and Rat inside of Hunnys Discord, or on Twitter, requesting the ability to mint. After this initial entry period, minting will be open for everybody. This process of allowing additional wallets to mint based on meeting certain conditions is called Signature-Based Minting.</em>
+          <p>This is not an ordinary NFT collection. This is a community-based collection that allows multiple people to mint their own pieces on to it, rather than confining that ability to one single owner. The instant that you mint your NFT, you will become its owner. You can then use it for any purpose that you wish: as a verified PFP on Twitter, for merchandise, to gift to somebody special, or to sell it! You will see the piece inside of OpenSea like any other NFT, and you can take it from there. Also, once you mint at least one piece, your wallet address will be added to our Royalties contract, allowing you to share in receiving perpetual royalties on any secondary sales taking place in markets like OpenSea.</p>
+          <p>In the beginning, the minting process will require a manual verification process by Stacys and Rat from Hunnys. While this is occurring, the minting process will be password-protected. If you are interested, please reach out to Stacys and Rat inside of Hunnys Discord, or on Twitter, requesting the ability to mint. After this initial entry period, minting will be open for everybody. This process of allowing additional wallets to mint based on meeting certain conditions is called Signature-Based Minting.</p>
           <h3>If I previously drew a Hunnys derivative, can I mint it inside the collection?</h3>
-          <em>Yes you can! We only ask that you use something that has not been minted before.</em>
+          <p>Yes you can! We only ask that you use something that has not been minted before.</p>
           <h3>Can I mint a derivative that I didn’t draw myself?</h3>
-          <em>Yes - As long as you have commercial rights/permission to use the image for this purpose. We want non-artists to be able to participate as well, so we encourage talking to community artists about your vision for your Hunnys derivative and hiring them to create it for this project.</em>
+          <p>Yes - As long as you have commercial rights/permission to use the image for this purpose. We want non-artists to be able to participate as well, so we encourage talking to community artists about your vision for your Hunnys derivative and hiring them to create it for this project.</p>
           <h3>Are there any base files I can get started with, or any upload recommendations to be aware of?</h3>
-          <em>Absolutely! You can use <a href='https://drive.google.com/drive/folders/1z9_njr3mXPU6FTMq_bCaREUFIb6NxhKL' rel="noreferrer" target='_blank'>this base</a> here to get started. This will set you up with a 3000 x 3000 px file, which is the recommended resolution for optimal display of your NFT.</em>
+          <p>Absolutely! You can use <a href='https://drive.google.com/drive/folders/1z9_njr3mXPU6FTMq_bCaREUFIb6NxhKL' rel="noreferrer" target='_blank'>this base</a> here to get started. This will set you up with a 3000 x 3000 px file, which is the recommended resolution for optimal display of your NFT.</p>
           <h3>Are there any limits to what I can upload?</h3>
-          <em>The Hunnys team values and welcomes a diverse field of creative input, artistic expression, and background. Having said that, if it is found out that any of the content minted on this contract promotes hatred, violence, bigotry, or demeaning towards other artists/collections, the Hunnys team reserves the right to hide these pieces from the website, restrict from future minting, and if necessary, take further disciplinary actions inside of the Hunnys Discord.</em>
+          <p>The Hunnys team values and welcomes a diverse field of creative input, artistic expression, and background. Having said that, if it is found out that any of the content minted on this contract promotes hatred, violence, bigotry, or demeaning towards other artists/collections, the Hunnys team reserves the right to hide these pieces from the website, restrict from future minting, and if necessary, take further disciplinary actions inside of the Hunnys Discord.</p>
           <h3>How can we earn money with the Hunnys Hupe Scouts?</h3>
-          <em>Initially you can earn both primary sale and royalties by listing your piece for sale within the collection. If the Hunnys Hupe Scouts derivative brand gets deals, sponsorships or other partnerships in the future, the earnings will be split equally amongst all the contributors.</em>
+          <p>Initially you can earn both primary sale and royalties by listing your piece for sale within the collection. If the Hunnys Hupe Scouts derivative brand gets deals, sponsorships or other partnerships in the future, the earnings will be split equally amongst all the contributors.</p>
           <h3>Can I upload more than 1 piece?</h3>
-          <em>Yes!</em>
+          <p>Yes!</p>
           <h3>How can I get more involved with the community?</h3>
-          <em>There are two great ways to do that! You can join the <a href='https://discord.gg/hunnys' rel="noreferrer" target='_blank'>Hunnys Discord,</a> and you can follow <a href='https://twitter.com/hunnysNFT' rel="noreferrer" target='_blank'>@HunnysNFT</a> on Twitter!</em>
+          <p>There are two great ways to do that! You can join the <a href='https://discord.gg/hunnys' rel="noreferrer" target='_blank'>Hunnys Discord,</a> and you can follow <a href='https://twitter.com/hunnysNFT' rel="noreferrer" target='_blank'>@HunnysNFT</a> on Twitter!</p>
           <h3>Where can I find the contract for this project?</h3>
-          <em>You can find it right here on <a href='https://etherscan.io/address/0x1D595b1b360E2240e85f06beC1D1679D5C005BE3' rel="noreferrer" target='_blank'>Etherscan!</a></em>
+          <p>You can find it right here on <a href='https://etherscan.io/address/0x1D595b1b360E2240e85f06beC1D1679D5C005BE3' rel="noreferrer" target='_blank'>Etherscan!</a></p>
           <h3>What are Hunnys?</h3>
-          <em>The Hunnys NFT collection is the foundational project that has allowed the Hunnys brand to grow into projects like this. You can find the proper Hunnys NFT collection <a href='https://opensea.io/collection/hunnys' rel="noreferrer" target='_blank'>here on OpenSea.</a></em>
+          <p>The Hunnys NFT collection is the foundational project that has allowed the Hunnys brand to grow into projects like this. You can find the proper Hunnys NFT collection <a href='https://opensea.io/collection/hunnys' rel="noreferrer" target='_blank'>here on OpenSea.</a></p>
           <h3>How was this project created?</h3>
-          <em>The Hunnys Hupe Scouts brand utilizes state-of-the-art decentralized blockchain technology developed by <a href='https://thirdweb.com' rel="noreferrer" target='_blank'>thirdweb</a> to implement governance, token management, and revenue splitting.</em>
+          <p>The Hunnys Hupe Scouts brand utilizes state-of-the-art decentralized blockchain technology developed by <a href='https://thirdweb.com' rel="noreferrer" target='_blank'>thirdweb</a> to implement governance, token management, and revenue splitting.</p>
           </div>
         </div>
+        <img src={`/HunnysDerivs.png`} alt="Hunnys Derivatives" className={styles.hunnysDerivs} />
       </div>
     </>
   );

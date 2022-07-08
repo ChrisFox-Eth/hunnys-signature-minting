@@ -71,14 +71,17 @@ h1 {
   letter-spacing: 2px;
   color: var(--hero-darkblue);
 }
+
 h2 {
   font-size: 2rem;
   font-family: "Luckiest Guy", sans-serif;
   letter-spacing: 1px;
+  color: var(--hero-darkblue);
 }
 
 h3 {
   font-size: 1.5rem;
   font-family: "Luckiest Guy", sans-serif;
   letter-spacing: 1px;
+  color: var(--hero-darkblue);
 }
