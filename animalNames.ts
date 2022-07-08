@@ -1,5 +1,5 @@
 const animalNames = [
-  "329f8h21fjhjasdf",
+  "Janet the Joyrider",
 ];
 
 export default animalNames;
