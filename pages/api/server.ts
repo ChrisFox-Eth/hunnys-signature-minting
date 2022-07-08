@@ -27,7 +27,7 @@ export default async function server(
     // Load the NFT Collection via it's contract address using the SDK
     const nftCollection = sdk.getNFTCollection(
       // Replace this with your NFT Collection contract address
-      "0xf69Ba6Bce4B0ee10bfE9FD5D43A36bC9A1Cc5EbF"
+      "0x1D595b1b360E2240e85f06beC1D1679D5C005BE3"
     );
 
     // Here we can make all kinds of cool checks to see if the user is eligible to mint the NFT.
@@ -35,10 +35,10 @@ export default async function server(
 
     // 1) Check that it's an animal name from our list of animal names
     // This demonstrates how we can restrict what kinds of NFTs we give signatures for
-    if (!animalNames.includes(nftName?.toLowerCase())) {
-      res.status(400).json({ error: "Minting is currently not open to the public. Please reach out in Hunnys Discord for more information." });
-      return;
-    }
+    //if (!animalNames.includes(nftName?.toLowerCase())) {
+    //  res.status(400).json({ error: "Minting is currently not open to the public. Please reach out in Hunnys Discord for more information." });
+    //  return;
+    // }
 
     // 2) Check that this wallet hasn't already minted a page - 1 NFT per wallet
 //    const hasMinted = (await nftCollection.balanceOf(authorAddress)).gt(0);
