@@ -117,7 +117,7 @@ const Home: NextPage = () => {
 
       console.log("Successfully minted NFT with signature", nft);
 
-      alert("Successfully minted NFT with signature");
+      alert("HUPE! Your NFT has been added to the collection. Check it out below!");
 
       return nft;
     } catch (e) {
