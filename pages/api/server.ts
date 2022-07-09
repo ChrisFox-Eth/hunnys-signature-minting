@@ -35,10 +35,10 @@ export default async function server(
 
     // 1) Check that it's an animal name from our list of animal names
     // This demonstrates how we can restrict what kinds of NFTs we give signatures for
-    if (!animalNames.includes(nftName?.toLowerCase())) {
-      res.status(400).json({ error: "Minting is currently not open to the public. Please reach out in Hunnys Discord for more information." });
-      return;
-     }
+    //if (!animalNames.includes(nftName?.toLowerCase())) {
+    //  res.status(400).json({ error: "Minting is currently not open to the public. Please reach out in Hunnys Discord for more information." });
+    //  return;
+    // }
 
     // 2) Check that this wallet hasn't already minted a page - 1 NFT per wallet
 //    const hasMinted = (await nftCollection.balanceOf(authorAddress)).gt(0);
