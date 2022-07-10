@@ -9,6 +9,7 @@ import {
   useNFTCollection,
   useNFTs,
   useSigner,
+  useNFTBalance,
 } from "@thirdweb-dev/react";
 import { ChainId, ThirdwebSDK } from "@thirdweb-dev/sdk";
 import type { NextPage } from "next";
@@ -28,6 +29,14 @@ const Home: NextPage = () => {
     // Replace this with your NFT Collection contract address
     "0x1D595b1b360E2240e85f06beC1D1679D5C005BE3"
   );
+
+  // Check for at least 1 Hunnys in wallet
+  const hunnysCollection = useNFTCollection(
+    // Replace this with the Hunnys10k contract address
+    "0x5DFEB75aBae11b138A16583E03A2bE17740EADeD"
+  );
+  const [isClaiming, setIsClaiming] = useState(false);
+  const { data: balance, isLoading } = useNFTBalance(hunnysCollection, address, "0");
 
   // Here we store the user inputs for their NFT.
   const [nftName, setNftName] = useState<string>("");
@@ -124,6 +133,14 @@ const Home: NextPage = () => {
       console.error("An error occurred trying to mint the NFT:", e);
     }
   };
+
+  //if (balance > 0) {
+  //  return (
+  //    <div>
+  //            <h2>Congratulations! You have a Shape Membership Card! 🟦🔺🟣</h2>
+  //          </div>
+  //        );
+  //      }
 
   return (
     <>
