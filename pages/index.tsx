@@ -9,6 +9,7 @@ import {
   useNFTCollection,
   useNFTs,
   useSigner,
+  useNFTBalance,
 } from "@thirdweb-dev/react";
 import { ChainId, ThirdwebSDK } from "@thirdweb-dev/sdk";
 import type { NextPage } from "next";
