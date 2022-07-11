@@ -112,6 +112,7 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  z-index: 1000;
 }
 
 .left {
@@ -146,7 +147,7 @@
 
 .heartBullet {
   width:auto;
-  max-width: 25px;
+  max-width: 25px !important;
 }
 
 .logo {
@@ -169,6 +170,7 @@
   width: auto;
   padding: 20px;
   max-width: 400px;
+  z-index: 5;
 }
 
 .navLink {
