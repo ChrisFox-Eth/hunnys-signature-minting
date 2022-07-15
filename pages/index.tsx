@@ -72,22 +72,18 @@ const Home: NextPage = () => {
       type="text"
       placeholder="Name of your NFT"
       className={styles.textInput}
-      maxLength={40}
-      disabled="true"
+      maxLength={0}
     />
 
     <textarea
       placeholder="Description of your NFT"
       className={styles.textInput}
-      maxLength={250}
-      disabled="true"
+      maxLength={0}
     />
 
 
       <div
         className={styles.imageInput}
-        disabled="true"
-
       >
         Drag and drop an image here to upload it!
       </div>
@@ -95,7 +91,7 @@ const Home: NextPage = () => {
 
 
   <div style={{ marginTop: 24 }}>
-      <a className={styles.mainButton} disabled={"true"}>Not Eligible</a>
+      <a className={styles.mainButton}>Not Eligible</a>
   </div>
   </div>
   </div>
