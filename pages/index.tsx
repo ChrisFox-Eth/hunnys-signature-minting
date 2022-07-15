@@ -30,46 +30,23 @@ const Home: NextPage = () => {
   const signer = useSigner();
   const isOnWrongNetwork = useNetworkMismatch();
   const [, switchNetwork] = useNetwork();
-
-/*
   const hunnysCollection = useNFTCollection("0x5DFEB75aBae11b138A16583E03A2bE17740EADeD");
   const [hasBalance, setHasBalance] = useState(false);
-  const { data: balance, isLoading } = useNFTBalance(hunnysCollection, address, "0");
+  const { data: balance, isLoading } = useNFTBalance(hunnysCollection, address);
 
 
-// '[NFTCollection | undefined, string | undefined, "0"]' is not assignable to parameter of type
-// '[contract: RequiredParam<Erc721<any>>, ownerWalletAddress: RequiredParam<string>] | [contract: RequiredParam<Erc1155<any>>, ownerWalletAddress: RequiredParam<string>, tokenId: RequiredParam<...>]'.
-
-  // Check for at least 1 Hunnys in wallet
-
-
-
-  if (!address) {
+  if (balance?.toNumber() === 0) {
       return (
         <div>
-          <h1>Check to see if you can sit with us.</h1>
-        </div>
-      );
-    }
-
-  if (balance == 0) {
-      return (
-        <div>
-        <p>It looks like there are currently no Hunnys NFTs held by the connected wallet:{" "}
-      <span
+        <h2
         style={{
-          cursor: "pointer",
-          color: "white",
-              }}
-        onClick={() =>
-        window.open(
-          "https://opensea.io/" + address,
-          "_blank"
-        )}>
-          {address.slice(0, 6)}...{address.slice(-4)}
-      </span>
-    </p>
-    <p>In order to be eligible to mint, you will need to be holding at least{" "}
+          color: "var(--purple)"
+        }}>It looks like there are currently no Hunnys NFTs held by the connected wallet.
+    </h2>
+    <h2
+    style={{
+      color: "var(--purple)"
+    }}>In order to be eligible to mint, you will need to be holding at least{" "}
     <span
     style={{
       cursor: "pointer",
@@ -82,11 +59,51 @@ const Home: NextPage = () => {
     )}>
     1 Hunnys 10k NFT token.
   </span>
-  </p>
-    </div>
+  </h2>
+  <div className={styles.aboutContainer}>
+  <div className={styles.mintShadow}>
+  <h2 className={styles.theCollection}>
+    Mint your piece into the collection:
+  </h2>
+  <p className={styles.description}>You can upload image, audio, video, html, text, pdf, and 3d model files here.</p>
+  <div className={styles.collectionContainer}>
+
+    <input
+      type="text"
+      placeholder="Name of your NFT"
+      className={styles.textInput}
+      maxLength={40}
+      disabled="true"
+    />
+
+    <textarea
+      placeholder="Description of your NFT"
+      className={styles.textInput}
+      maxLength={250}
+      disabled="true"
+    />
+
+
+      <div
+        className={styles.imageInput}
+        disabled="true"
+
+      >
+        Drag and drop an image here to upload it!
+      </div>
+
+
+
+  <div style={{ marginTop: 24 }}>
+      <a className={styles.mainButton} disabled={"true"}>Not Eligible</a>
+  </div>
+  </div>
+  </div>
+  </div>
+  </div>
       );
     }
-*/
+
 
   return (
     <>
