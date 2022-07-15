@@ -19,6 +19,7 @@ import React, { Component }  from "react";
 export const Minter = () => {
   // Helpful thirdweb hooks to connect and manage the wallet from metamask.
   const address = useAddress();
+  const [mintLoading, setMintLoading] = useState(false);
   const connectWithMetamask = useMetamask();
   const disconnectWallet = useDisconnect();
   const signer = useSigner();
@@ -59,6 +60,7 @@ export const Minter = () => {
   // This function calls a Next JS API route that mints an NFT with signature-based minting.
   // We send in the address of the current user, and the text they entered as part of the request.
   const mintWithSignature = async () => {
+    setMintLoading(true);
     if (!address) {
       connectWithMetamask();
       return;
@@ -70,8 +72,8 @@ export const Minter = () => {
     }
 
     try {
-      if (!file || !nftName) {
-        alert("Please enter a name and upload a file.");
+      if (!file || !nftName || !nftDescription) {
+        alert("Please make sure you have a name, a description, and your file.");
         return;
       }
 
@@ -126,6 +128,9 @@ export const Minter = () => {
     } catch (e) {
       console.error("An error occurred trying to mint the NFT:", e);
     }
+      finally {
+        setMintLoading(false);
+      }
   };
 
 
@@ -136,8 +141,9 @@ export const Minter = () => {
           <div className={styles.aboutContainer}>
           <div className={styles.mintShadow}>
           <h2 className={styles.theCollection}>
-            Join the Hupe Scouts:
+            Mint your piece into the collection:
           </h2>
+          <p className={styles.description}>You can upload image, audio, video, html, text, pdf, and 3d model files here.</p>
           <div className={styles.collectionContainer}>
 
             <input
@@ -186,8 +192,7 @@ export const Minter = () => {
           <div style={{ marginTop: 24 }}>
             {address ? (
               <a className={styles.mainButton} onClick={mintWithSignature}>
-                Mint NFT
-              </a>
+                {mintLoading ? "loading..." : "Mint NFT"}</a>
             ) : (
               <a className={styles.mainButton} onClick={connectWithMetamask}>
                 Connect Wallet
