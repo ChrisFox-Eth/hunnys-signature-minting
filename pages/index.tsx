@@ -35,7 +35,39 @@ const Home: NextPage = () => {
   const { data: balance, isLoading } = useNFTBalance(hunnysCollection, address);
 
 
-  if (balance?.toNumber() === 0) {
+  if (!address) {
+    return (
+      <div>
+      <h2
+      style={{
+        color: "var(--purple)"
+      }}>Please connect your wallet to check your eligibility for minting.
+  </h2>
+  <h2
+  style={{
+    color: "var(--purple)"
+  }}>In order to be eligible to mint, you will need to be holding at least{" "}
+  <span
+  style={{
+    cursor: "pointer",
+    color: "white",
+        }}
+  onClick={() =>
+  window.open(
+    "https://opensea.io/collection/hunnys",
+    "_blank"
+  )}>
+  1 Hunnys 10k NFT token.
+</span>
+</h2>
+<a className={styles.mainButton} onClick={connectWithMetamask}>
+  Connect Wallet
+</a>
+</div>
+    )
+  }
+if
+  (balance?.toNumber() === 0) {
       return (
         <div>
         <h2
