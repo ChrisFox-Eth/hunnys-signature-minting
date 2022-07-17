@@ -144,6 +144,20 @@ export const Minter = () => {
             Mint your piece into the collection:
           </h2>
           <p className={styles.description}>You can upload image, audio, video, html, text, pdf, and 3d model files here.</p>
+          <p className={styles.description}>Want to use markdown in your description? Use this {" "}
+          <span
+          style={{
+            cursor: "pointer",
+            color: "var(--hero-darkblue)",
+                }}
+          onClick={() =>
+          window.open(
+            "https://www.markdownguide.org/basic-syntax",
+            "_blank"
+          )}>
+          markdown cheatsheet
+        </span>{" "}
+          for reference.</p>
           <div className={styles.collectionContainer}>
 
             <input
